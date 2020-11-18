@@ -1,0 +1,45 @@
+<html>
+<head>
+  <title>CuteBank</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="content">
+    <div class="fon-content">
+      <div class="welcome">
+        <div class="form-reg">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Input your e-mail" %>
+          </div>
+
+          <div class="field">
+            <% if @minimum_password_length %>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "Pick a password" %>
+          </div>
+
+          <div class="field">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Repeat a password" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Become a client" %>
+          </div>
+
+           <div class="actions">
+            <%= f.submit "Back" %>
+          </div>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

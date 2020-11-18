@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title>CuteBank</title>
+  <%= stylesheet_link_tag 'ClientInterface.css' %>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="content">
+    <div class="fon-content">
+
+      <div class="do_balance">
+        
+        <div class="input_balance">
+          <div>Current cash amount in cash machine:
+            <%= @cash.cash_amount%>
+          </div>  
+        </div>
+      
+        <div class="operation_balance">
+          <div>
+            <%= form_for :admin, :url => {:controller => :admin, :action => :index} do |f| %>
+              <% if @cash.errors.any? %>
+                <% @cash.errors.full_messages.each do |msg| %>
+                  <div class= "alertCash ">
+                    <%= msg%>
+                  </div>
+                <% end %>
+              <% end %>
+              <p >
+                Set cash machine money amount  <br>
+              <%= f.text_field :cash_amount %>
+              </p>
+
+              <p >
+                <%= f.submit 'Submit'%>
+              </p>
+            <%end%>
+          </div>  
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

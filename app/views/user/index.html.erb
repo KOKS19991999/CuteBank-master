@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>CuteBank</title>
+  <%= stylesheet_link_tag 'ClientInterface.css' %>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="content">
+    <div class="fon-content">
+
+      <div class="do_balance">
+        
+        <div class="input_balance">
+          <%= form_for :user, :url => {:controller => :user, :action => :index} do |f| %>
+            <% if @user.errors.any? %>
+              <% @user.errors.full_messages.each do |msg| %>
+                <div class= "alertUser ">
+                  <%= msg%>
+                </div>
+              <% end %>
+            <% end %>
+            <p >
+              Enter the sum to withdraw or to deposit <br>
+              <%= f.text_field :current_balance %>
+            </p>
+
+            <p >
+              <%= f.submit 'Withdraw' %>
+            </p>
+            
+            <p >
+              <%= f.submit 'Deposit' %>
+            </p>
+
+          <%end%>
+        </div>
+      
+        <div class="operation_balance">
+          <div>
+            <%if @record !=nil%>
+              <%@record.each do |item|%>
+                <%=item.operation_type%>
+                <%=item.amount%>
+                <%=item.balance_after%>
+                <%=item.created_at%>
+              <%end%>
+            <% end %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="balance">
+        <div>
+          <%= @user.email %>
+        </div>
+
+        <div>
+          <%=  @user.current_balance%>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
