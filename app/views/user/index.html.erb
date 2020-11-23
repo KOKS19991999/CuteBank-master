@@ -2,8 +2,8 @@
 
 <head>
   <title>CuteBank</title>
-  <%= stylesheet_link_tag 'ClientInterface.css' %>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,44 +22,84 @@
               <% end %>
             <% end %>
             <p >
-              Enter the sum to withdraw or to deposit <br>
-              <%= f.text_field :current_balance %>
+              <%= f.text_field :current_balance, :placeholder => 'Input value:', :class => 'input_monay' %>
             </p>
 
             <p >
-              <%= f.submit 'Withdraw' %>
+              <%= f.submit 'Deposit', :class => 'submit-deposit' %>
             </p>
-            
+
             <p >
-              <%= f.submit 'Deposit' %>
+              <%= f.submit 'Withdraw', :class => 'submit-withdraw' %>
             </p>
 
           <%end%>
         </div>
       
-        <div class="operation_balance">
-          <div>
-            <%if @record !=nil%>
-              <%@record.each do |item|%>
-                <%=item.operation_type%>
-                <%=item.amount%>
-                <%=item.balance_after%>
-                <%=item.created_at%>
-              <%end%>
-            <% end %>
-          </div>
-        </div>
 
+
+        <div class="balance">
+        <div>
+        Balance:<br>
+        <%=  @user.current_balance%>
+        <br>
+        ---
+        <br>Latest operations:
+
+
+        <table>
+        <tr><th>Operation</th><th>Amount</th></tr>
+          <%if @record !=nil%>
+            <%@record.each do |item|%>
+
+
+
+              <tr>
+              <td><%=item.operation_type%></td>
+              <td>+<%=item.amount%></td>
+              </tr>
+             
+
+
+
+
+              
+            <%end%>
+          <% end %>
+          </table>
+
+
+
+        </div>
       </div>
 
-      <div class="balance">
-        <div>
-          <%= @user.email %>
+
+        <div class="operation_balance">
+          <table>
+          <tr><th>Operation</th><th>Amount</th><th>Date</th><th>Time</th><th>Balance</th></tr>
+            <%if @record !=nil%>
+              <%@record.each do |item|%>
+
+
+
+                <tr>
+                <td><%=item.operation_type%></td>
+                <td>+<%=item.amount%></td>
+                <td><%=item.created_at%></td>
+                <td></td>
+                <td><%=item.balance_after%></td>
+                </tr>
+               
+
+
+
+
+                
+              <%end%>
+            <% end %>
+            </table>
         </div>
 
-        <div>
-          <%=  @user.current_balance%>
-        </div>
       </div>
 
     </div>

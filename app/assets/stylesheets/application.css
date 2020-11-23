@@ -14,23 +14,14 @@
  *= require_self
  */
 
-
-
-
  svg {
     background-clip: text;
     -webkit-background-clip: text;
 }
 
-a, #footer span {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    color: black;
+body {
+    background-color: #000;
+    color: white;
 }
 
 #container {
@@ -39,14 +30,18 @@ a, #footer span {
     min-width: 605px;
 }
 
-.welcome {
-    padding-top: 221px;
-    margin: 0 auto;
-    display: table;
-    text-align: center;
+
+
+/* Head */
+h1 {
+    font-size: 0px;
 }
 
-
+.logo-box:hover, .actions input:hover,.submit-withdraw:hover,.submit-deposit:hover {
+    color: black;
+    position: relative;
+    bottom: 2px;
+}
 
 .fon-head {
     background: url(/assets/fon-head.svg) 100% 100% no-repeat;
@@ -55,9 +50,6 @@ a, #footer span {
     background-size: cover;
     max-width: 1280px;
 }
-
-
-/* Меню и Логотип */
 
 .logo img {
     border-bottom: 2px solid #000;
@@ -113,7 +105,34 @@ li:last-child {
     padding-left: 8px;
 }
 
-/* Контент, Авторизация и Регистрация */
+li a {
+    padding-top: 26px;
+    bottom: 8px;
+}
+
+a:hover {
+    color: black;
+    position: relative;
+    bottom: 2px;
+}
+
+li {
+    display: inline-block;
+    margin-left: 25px;
+    border-right: 3px solid #000000;
+}
+
+li:nth-child(2) {
+    padding-right: 42px;
+    padding-left: 17px;
+}
+
+
+
+/* middle */
+#content {
+    margin-top: -5px;
+}
 
 .fon-content {
     background: url(/assets/fon-content.svg) 100% 100% no-repeat;
@@ -123,38 +142,8 @@ li:last-child {
 }
 
 
-.block-reg {
-    float: right;
-    width: 457px;
-    height: 549px;
-    margin-top: 35px;
-    margin-right: 35px;
-    
-    background: #FF7A00;
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 12px 8px rgba(0, 0, 0, 0.64);
-    border-radius: 25px;
-}
 
-.become-client,
-.client-login {
-    height: 30px;
-    padding: 2em 0;
-    background: #FF7A00;
-    border: 1px solid #000000;
-    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.45);
-    border-radius: 15px;
-    width: 454px;
-}
-
-.client-login {
-    margin-top: 70px;
-}
-
-
-/* Подвал */
-
+/* footer */
 #footer {
     margin-top: -9px;
 }
@@ -180,8 +169,6 @@ li:last-child {
     cursor: alias;
 }
 
-
-
 #footer li:last-child {
     float: right;
     padding-right: 0;
@@ -198,7 +185,6 @@ li:last-child {
     float: left;
     
 }
-
 
 #footer nav {
     padding: 0;
@@ -217,24 +203,53 @@ margin-left: 25px;
     background-size: cover;
 }
 
-
-
-
-
-
-
-.logo-box:hover, .actions input:hover {
-    color: black;
+a, #footer span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    text-decoration: none;
+    display: inline-block;
     position: relative;
-    bottom: 2px;
+    color: black;
+}
+
+/* Reg/Login */
+
+.welcome {
+    padding-top: 221px;
+    margin: 0 auto;
+    display: table;
+    text-align: center;
 }
 
 
+.block-reg {
+    float: right;
+    width: 457px;
+    margin-top: 35px;
+    margin-right: 35px;
+    
+    background: #FF7A00;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 12px 8px rgba(0, 0, 0, 0.64);
+    border-radius: 25px;
+}
 
-/* Логотип */
+.become-client,
+.client-login {
+    height: 30px;
+    padding: 2em 0;
+    background: #FF7A00;
+    border: 1px solid #000000;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.45);
+    border-radius: 15px;
+    width: 454px;
+}
 
-h1 {
-    font-size: 0px;
+.client-login {
+    margin-top: 70px;
 }
 
 .form-reg {
@@ -290,82 +305,114 @@ line-height: 28px;
 color: #141414;
 }
 
-
-
-
-
-
-
-
-
-body {
-    background-color: #000;
-    color: white;
+.actions {
+    margin-bottom: 27px;
 }
 
 
-/* Меню и Логотип */
 
-li a {
-    padding-top: 26px;
-    bottom: 8px;
-}
-
-a:hover {
-    color: black;
-    position: relative;
-    bottom: 2px;
-}
-
-li {
-    display: inline-block;
-    margin-left: 25px;
-    border-right: 3px solid #000000;
-}
-
-li:nth-child(2) {
-    padding-right: 42px;
-    padding-left: 17px;
-}
-
-
-/* Контент, Авторизация и Регистрация */
-
-#content {
-    margin-top: -5px;
-}
-
-.do_balance {
-    float: left;
-    margin-left: 35px;
-
-}
-
-.input_balance, .operation_balance {
-    width: 825px;
+/* Page User */
+.input_balance {
+    width: 824px;
     height: 245px;
     background: #FF7A00;
-
     border: 2px solid #000000;
     box-sizing: border-box;
-    box-shadow: 0 4px 12px 8px rgba(0, 0, 0, 0.64);
-    border-radius: 15px;
-    margin-top: 35px;
-}
-
-.operation_balance {
-    margin-top: 40px;
+    box-shadow: 0px 4px 12px 8px rgba(0, 0, 0, 0.64);
+    border-radius: 25px;
+    float: left;
 }
 
 .balance {
-    float: right;
-    width: 270px;
-    height: 385px;
+    width: 352px;
+    height: 245px;
     background: #FF7A00;
-    margin-right: 95px;
     border: 2px solid #000000;
     box-sizing: border-box;
-    box-shadow: 0 4px 12px 8px rgba(0, 0, 0, 0.64);
-    border-radius: 15px;
-    margin-top: 35px;
+    box-shadow: 0px 4px 12px 8px rgba(0, 0, 0, 0.64);
+    border-radius: 25px;
+    float: right;
+    margin-right: 15px;
 }
+
+.operation_balance {
+    width: 1205px;
+    height: 476px;
+    display: inline-block;
+background: #FF7A00;
+border: 2px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 12px 8px rgba(0, 0, 0, 0.64);
+border-radius: 25px;
+margin-top: 30px;
+}
+
+.do_balance {
+    margin: 0px 30px;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.input_monay {
+    width: 770px;
+    height: 72px;
+    background: #FFFFFF;
+    border-radius: 25px;
+    border: 0px;
+    margin-left: 25px;
+    margin-top: 14px;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+text-align: center;
+color: #3E3E3E;
+}
+
+.submit-deposit, .submit-withdraw {
+    float: left;
+width: 301px;
+height: 70px;
+background: #848484;
+border: 2px solid #000000;
+box-sizing: border-box;
+border-radius: 25px;
+margin: 20px 25px;
+    font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 42px;
+color: #000000;
+}
+
+.submit-withdraw {
+    float: right;
+}
+
+
+
+.operation_balance table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    max-width: 70%;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .operation_balance th {
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+    border-bottom: 2px solid #000000;
+    padding: 10px 8px;
+  }
+
+  .operation_balance td {
+    color: rgb(0, 0, 0);
+    padding: 9px 8px;
+    transition: .3s linear;
+  }
+
+  .operation_balance tr:hover td {color: #ffffff;}
