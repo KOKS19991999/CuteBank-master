@@ -3,14 +3,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :main, only: [:index] 
+  resources :main, only: [:index]
 
-  resources :about, only: [:index] 
+  resources :about, only: [:index]
 
-  resources :admin, only: [:index, :create]
+  resources :admin, only: %i[index create]
 
-  resources :user, only: [:index, :create]
+  resources :user, only: %i[index create]
 
   root to: 'main#index'
-
 end
